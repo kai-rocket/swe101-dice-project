@@ -113,8 +113,8 @@ var main = function (input) {
     // Switch mode to choose dice order
     gameMode = GAME_MODE_CHOOSE_DICE_ORDER;
     // Return the dice roll values to that player
-    return `Welcome Player ${currPlayer}. <br>
-      You rolled Dice 1: ${newDiceRolls[0]} and Dice 2: ${newDiceRolls[1]} <br>
+    return `Welcome Player ${currPlayer}.
+      You rolled Dice 1: ${newDiceRolls[0]} and Dice 2: ${newDiceRolls[1]}
       Choose the order of the dice by entering 1 or 2 as the first numeral index.`;
   }
 
@@ -128,7 +128,7 @@ var main = function (input) {
 
     // Get player number for curr player
     var playerNum = getPlayerNumber(firstNumeralIndex);
-    var playerNumResponse = `Player ${currPlayer}, You chose Dice ${firstNumeralIndex} first. <br>
+    var playerNumResponse = `Player ${currPlayer}, You chose Dice ${firstNumeralIndex} first.
       Your number is ${playerNum}.`;
 
     // If currPlayer is Player 1, change currPlayer to Player 2, switch mode to dice roll
@@ -136,7 +136,7 @@ var main = function (input) {
       currPlayer = 2;
       gameMode = GAME_MODE_DICE_ROLL;
       // Return player number to Player 1, let Player 2 know it is their turn
-      return `${playerNumResponse} <br>
+      return `${playerNumResponse}
         It is now Player 2's turn. Press Submit to roll Player 2's dice.`;
     }
     // Else if currPlayer is Player 2, determine the winner and let the players know who won.
@@ -147,9 +147,10 @@ var main = function (input) {
     gameMode = GAME_MODE_DICE_ROLL;
 
     // Return the game end response
-    return `${playerNumResponse} <br>
-      Player ${winningPlayer} has won. <br>
-      Player 1's number: ${player1Num} | Player 2's number: ${player2Num} <br> <br>
+    return `${playerNumResponse}
+      Player ${winningPlayer} has won.
+      Player 1's number: ${player1Num} | Player 2's number: ${player2Num}
+      
       Press Submit to play again.`;
   }
 
